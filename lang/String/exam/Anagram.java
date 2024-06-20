@@ -5,17 +5,16 @@ public class Anagram {
         String str1 = "aabbcc";
         String str2 = "xxyybb";
 
-        String result = str1.concat(str2);
-        char[] chararr = result.toCharArray();
+        char[] str1Arr = str1.toCharArray();
+        char[] str2Arr = str2.toCharArray();
 
         int count = 0;
-        for (int i = 0; i < chararr.length; i++) {
-
-            for (int j = chararr.length-1; j > 0; j--) {
-                if (chararr[i] != chararr[j]){
-                    count++;
-                }
+        count += (str1Arr.length + str2Arr.length);
+        for (int i = 0; i < str1Arr.length; i++) {
+            if (str1Arr[i] == 'b' || str2Arr[i] == 'b'){
+                count--;
             }
+
         }
 
         System.out.println(count);
