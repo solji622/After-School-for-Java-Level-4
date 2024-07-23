@@ -4,6 +4,9 @@ import review.abs.detector.Detectable;
 import review.abs.reporter.Reportable;
 
 public class FactoryCam extends Camera implements Detectable, Reportable{
+    public Detectable detectable;
+    public Reportable reportable;
+
 
     @Override
     public void showMaininFeafure() {
@@ -11,20 +14,19 @@ public class FactoryCam extends Camera implements Detectable, Reportable{
     }
 
     public void setDetector(Detectable detector){
-        detector = new FactoryCam();
-        detector.detect();
+        this.detectable = detector;
     }
     @Override
     public void detect() {
-
+        detectable.detect();
     }
 
     public void setReporter(Reportable reporter){
-        reporter = new FactoryCam();
-        reporter.report();
+        this.reportable = reporter;
     }
     @Override
     public void report() {
-
+        reportable.report();
     }
+
 }
