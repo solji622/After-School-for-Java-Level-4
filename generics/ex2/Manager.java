@@ -18,7 +18,9 @@ public class Manager <U, P>{
     }
 
     public void displayInfo() {
-        System.out.println("user: " + user);
-        System.out.println("Product: " + product);
+        User name = (User) getUser();
+        Product product = (Product) getProduct();
+        System.out.println("user: " + name.getName());
+        System.out.println("Product: " + product.getName() + ", Price: " + product.getPrice());
     }
 }
