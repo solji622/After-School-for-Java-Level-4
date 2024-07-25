@@ -18,7 +18,8 @@ public class CoffeeOrder <T> {
     }
 
     public void displayOrder() {
-        System.out.println("Customer: " + customer);
+        Customer customer = (Customer) getCustomer();
+        System.out.println("Customer: " + customer.getName());
         System.out.println("Coffee: " + coffeeName);
     }
 }
